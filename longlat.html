@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Address Autocomplete with Lat/Lon</title>
+</head>
+<body>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" placeholder="Start typing..." style="width: 300px;">
+  <ul id="suggestions" style="list-style: none; padding: 0; margin: 0;"></ul>
+
+  <p><strong>Latitude:</strong> <span id="lat">-</span></p>
+  <p><strong>Longitude:</strong> <span id="lon">-</span></p>
+
+  <script>
+    const input = document.getElementById("address");
+    const suggestions = document.getElementById("suggestions");
+    const latSpan = document.getElementById("lat");
+    const lonSpan = document.getElementById("lon");
+
+    input.addEventListener("input", () => {
+      const query = input.value.trim();
+      if (query.length < 3) {
+        suggestions.innerHTML = "";
+        return;
+      }
+
+      const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=5`;
+      const proxyURL = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+
+      fetch(proxyURL)
+        .then(res => res.json())
+        .then(data => {
+          suggestions.innerHTML = "";
+
+          data.forEach(place => {
+            const li = document.createElement("li");
+            li.textContent = place.display_name;
+            li.style.cursor = "pointer";
+            li.style.padding = "5px";
+            li.style.borderBottom = "1px solid #ddd";
+
+            li.addEventListener("click", () => {
+              input.value = place.display_name;
+              suggestions.innerHTML = "";
+              latSpan.textContent = place.lat;
+              lonSpan.textContent = place.lon;
+            });
+
+            suggestions.appendChild(li);
+          });
+        })
+        .catch(err => {
+          console.error("Error loading suggestions:", err);
+          suggestions.innerHTML = "<li style='color:red;'>Failed to load suggestions</li>";
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (e.target !== input) {
+        suggestions.innerHTML = "";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculate Distance Between Two Places</title>
+</head>
+<body>
+  <h2>Distance Calculator</h2>
+
+  <div>
+    <h3>Place 1</h3>
+    <label for="lat1">Latitude:</label>
+    <input type="number" id="lat1" step="any" placeholder="e.g. 40.7128"><br><br>
+    <label for="lon1">Longitude:</label>
+    <input type="number" id="lon1" step="any" placeholder="e.g. -74.0060">
+  </div>
+
+  <div>
+    <h3>Place 2</h3>
+    <label for="lat2">Latitude:</label>
+    <input type="number" id="lat2" step="any" placeholder="e.g. 34.0522"><br><br>
+    <label for="lon2">Longitude:</label>
+    <input type="number" id="lon2" step="any" placeholder="e.g. -118.2437">
+  </div>
+
+  <br>
+  <button onclick="calculateDistance()">Calculate Distance</button>
+
+  <h3>Result:</h3>
+  <p id="result"></p>
+
+  <script>
+    function deg2rad(deg) {
+      return deg * (Math.PI / 180);
+    }
+
+    function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+      const R = 6371; // Earth radius in km
+      const dLat = deg2rad(lat2 - lat1);
+      const dLon = deg2rad(lon2 - lon1);
+
+      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = R * c;
+      return distance;
+    }
+
+    function calculateDistance() {
+      const lat1 = parseFloat(document.getElementById('lat1').value);
+      const lon1 = parseFloat(document.getElementById('lon1').value);
+      const lat2 = parseFloat(document.getElementById('lat2').value);
+      const lon2 = parseFloat(document.getElementById('lon2').value);
+
+      if (isNaN(lat1) || isNaN(lon1) || isNaN(lat2) || isNaN(lon2)) {
+        alert('Please enter valid numbers for all coordinates.');
+        return;
+      }
+
+      const distanceKm = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
+      const distanceMiles = distanceKm * 0.621371;
+
+      document.getElementById('result').textContent = 
+        `Distance: ${distanceKm.toFixed(2)} km (${distanceMiles.toFixed(2)} miles)`;
+    }
+  </script>
+</body>
+</html>

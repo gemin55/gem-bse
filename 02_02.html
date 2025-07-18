@@ -1,0 +1,170 @@
+<!doctype html>
+<html> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>My Website</title>
+    
+    <!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">   
+	<link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/slideshow.css">
+
+<script src="js/respond.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+<!-- row 1 -->
+<header class="row">
+
+        <nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <div class="container-fluid"> 
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+    	<ul class="navbar-nav ms-auto">
+        	<li class="nav-item"><a href="02_02.html" class="nav-link">
+                <i class="fab fa-apple"></i>
+Home</a></li>
+        	<li class="nav-item"><a href="#"  class="nav-link">About</a></li>
+        	<li class="nav-item dropdown">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">
+                    Services
+                </a>
+                <ul class="dropdown-menu w-100">
+                    <li class="dropdown-item"><a href="04_05.html" class="nav-link">Menu 1</a></li>
+                    <li class="dropdown-item"><a href="#" class="nav-link">Menu 2</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="dropdown-item"><a href="#" class="nav-link">Menu 3</a></li>
+                </ul>
+            </li>
+        	<li class="nav-item"><a href="03_01.html"  class="nav-link">Photo Gallery</a></li>
+        	<li class="nav-item"><a href="#" class="nav-link disabled">Contact</a></li>
+        </ul>
+
+        </div>
+
+        </div>
+    </nav>
+
+<div class="col-lg-6 col-sm-5">
+<a href="#"><img src="img/logo.png" class="img-fluid" alt="Wisdom Pets. click for home."></a>
+</div>
+<div class="col-lg-6 col-sm-7">
+<img src="img/animals.jpg" alt="" class="d-none d-md-block img-fluid">
+</div>
+</header>
+
+<!-- This is a Bootstrap alert -->
+<div class="col-12 alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
+		<strong>Success! </strong>
+		   Read this 
+		<a href="#" class="alert-link">message</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+
+<!-- row 2 -->
+ <section class="row rounded-3 bg-info shadow-lg mb-4">
+    
+    
+<div id="ss-container">
+<img src="img/jumbotron.jpg" id="slideshow" class="img-fluid">
+<a id="lsign" href="javascript:doBack();" >Back</a>
+&nbsp;&nbsp;&nbsp;
+<a id="rsign" href="javascript:doNext();">Next</a>
+<a id="num1" href="javascript:jump(0);">&#10026;</a>
+<a id="num2" href="javascript:jump(1);">&#10026;</a>
+<a id="num3" href="javascript:jump(2);">&#10026;</a>
+<a id="num4" href="javascript:jump(3);">&#10026;</a>
+</div>
+    
+    <div class="col-12 text-center">
+    <h1 class="text-uppercase display-1 text-warning bg-dark"> We treat your pets like <span class="badge bg-primary border border-3 border-warning border-top-0">our own</span></h1>
+
+    <blockquote class="fw-bold fst-italic opacity-75 lead bg-warning">At <abbr title="Wisdom Pet Medicine">WPM</abbr>, we strive to blend
+        the best in traditional and alternative healing
+         techniques to diagnose and treat companion   animals, 
+         including dogs, cats, birds, reptiles, rodents,
+          and fish. <cite title="https://www.test.com" class="blockquote-footer">James Dean</cite> </blockquote>
+    </div>
+</section>
+
+<!-- row 3 -->
+<main class="row">
+<div class="col-md-3 col-sm-6">
+<p><img src="img/gsd.jpg" alt=""  
+    class="img-fluid img-thumbnail mx-auto d-block" 
+    data-large="img/largegsd.jpg" 
+    style="cursor: zoom-in;" 
+    onclick="openImageModal(this.dataset.large)">
+</p>
+    <h4>Thanks for helping our German Shepherd</h4>
+    <p class="text-center">During the summer, my German Shorthair Pointer, Tonto, began to have severe redness and itching on his belly and feet. Through diagnostic testing, we learned that Tonto is severely allergic to over a dozen kinds of grass pollens.</p>
+    <h4>Tonto</h4>
+	<p><a href="javascript:window.open('https://www.disneylandparis.com/en-us/', 'disney', 'width=400,height=400,left=1200,top=500');" class="btn btn-outline-success active d-block" role="button">Read more >></a></p>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <p><img src="img/kitten.jpg" alt=""  class="img-fluid rounded-circle"></p>
+    <h4>Our diabetic kitty is better</h4>
+    <p>When Samantha, our sweet kitten, began sleeping all the time and urinating excessively, we brought her to see the specialists at Wisdom. After running a blood test, Dr. Winthrop confirmed what we all feared – Samantha was showing signs of diabetes. </p>
+	<h4>Samantha</h4>   
+   <p><a href="#" class="btn btn-outline-danger d-block">Read more >></a></p>
+   </div>
+   <div class="col-md-3 col-sm-6">
+	<p><img src="img/bulldog.jpg" alt="" class="img-fluid rounded-circle"></p>
+    <h4>Our grape-loving dog</h4>
+    <p>The staff at Wisdom worked tirelessly to determine why our three-year old bulldog, Roxie, started going into sudden kidney failure. They stabilized her and provided fluids until her kidneys were again functioning normal, but it was still a mystery as to what caused her health to decline so quickly. </p>
+	<h4>Roxie</h4>
+    <p><a href="#" class="btn btn-outline-warning d-block">Read more >></a></p>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+    <p><img src="img/goldfish.jpg" alt=""  class="img-fluid img-thumbnail"></p>
+    <h4>A dog antibiotic cured our fish</h4>
+    <p>Wisdom Pet Medicine is the only clinic around that will even book pet fish for appointments. When our 13-year old goldfish, McAllister, turned from silvery white to an angry red, we called around, urgently trying to find a veterinarian who could help. Wisdom not only got us in the same day, but also was able to diagnose McAllister as having a severe case of septicemia. </p>
+	<h4>McAllister</h4>
+     <p><a href="#" class="btn btn-outline-info disabled d-block">Read more >></a></p>
+     </div>
+</main>
+<!-- row 4 -->
+ <footer class="row text-md-center">
+    <div class="col-12">
+     <p>This not a real veterinary medicine site, and is not meant to diagnose or offer treatment. Please see your veterinarian for all matters related to your pet's health.</p>
+	 <p class="small">Wisdom Pet Medicine is a training brand</p>
+     <p id="result"></p>
+     </div>
+</footer>
+</div>   
+
+<!-- Modal to show large image -->
+<div class="modal fade" id="imageModal" tabindex="-1"
+aria-labelledby="imageModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-xl">
+<div class="modal-content bg-dark border-0">
+<div class="modal-body text-center p-0">
+<img id="modalImage" src="" alt="Zoomed Image" class="img-fluid"
+style="max-height: 95vh;">
+</div>
+<div class="modal-footer justify-content-center bg-dark">
+<button type="button" class="btn btn-outline-light"
+data-bs-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- javascript -->
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/myjslibrary.js"></script>
+<script src="js/slideshow.js"></script>
+</body>
+</html>

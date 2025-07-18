@@ -1,0 +1,48 @@
+#ss-container {
+  position: relative;
+}
+
+#ss-container img {
+  width: 100%;
+}
+
+#ss-container a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+#lsign {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  font-size: 30px;
+}
+
+#rsign {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  font-size: 30px;
+}
+
+#num1 {
+  position: absolute;
+  bottom: 10%;
+  right: 100px;
+}
+#num2 {
+  position: absolute;
+  bottom: 10%;
+  right: 80px;
+}
+#num3 {
+  position: absolute;
+  bottom: 10%;
+  right: 60px;
+}
+#num4 {
+  position: absolute;
+  bottom: 10%;
+  right: 40px;
+}
