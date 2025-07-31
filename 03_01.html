@@ -1,142 +1,252 @@
-<!doctype html>
-<html> 
-<head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
     <title>My Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link
+      type="text/css"
+      href="https://code.jquery.com/ui/1.13.2/themes/ui-darkness/jquery-ui.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .ui-accordion .ui-accordion-header .ui-icon {
+        display: none;
+      }
+
+      .ui-accordion-header::after {
+        content: "+";
+        float: right;
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 10px;
+        transition: 0.3s;
+      }
+
+      .ui-accordion-header.ui-state-active::after {
+        content: "−";
+      }
+    </style>
+
     <script src="js/respond.js"></script>
-</head>
+  </head>
 
-<body>
-<div class="container">
-    <!-- row 1 -->
-    <header class="row">
+  <body>
+    <div class="container">
+      <!-- row 1 -->
+      <header class="row">
+        <nav class="navbar navbar-expand-md navbar-light bg-primary">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsibleNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <nav class="navbar navbar-expand-md navbar-light bg-primary">
-        <div class="container-fluid"> 
-
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
-    	<ul class="navbar-nav ms-auto">
-        	<li class="nav-item"><a href="index.html" class="nav-link">
-                <i class="fab fa-apple"></i>
-Home</a></li>
-        	<li class="nav-item"><a href="#"  class="nav-link">About</a></li>
-        	<li class="nav-item dropdown">
-                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">
+                    <i class="fab fa-apple"></i>
+                    Home</a
+                  >
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item dropdown">
+                  <a
+                    href="#"
+                    class="nav-link active dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                  >
                     Services
-                </a>
-                <ul class="dropdown-menu w-100">
-                    <li class="dropdown-item"><a href="04_05.html" class="nav-link">Menu 1</a></li>
-                    <li class="dropdown-item"><a href="#" class="nav-link">Menu 2</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li class="dropdown-item"><a href="#" class="nav-link">Menu 3</a></li>
-                </ul>
-            </li>
-        	<li class="nav-item"><a href="03_01.html"  class="nav-link">Photo Gallery</a></li>
-        	<li class="nav-item"><a href="#" class="nav-link disabled">Contact</a></li>
-        </ul>
+                  </a>
+                  <ul class="dropdown-menu w-100">
+                    <li class="dropdown-item">
+                      <a href="04_05.html" class="nav-link">Menu 1</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="#" class="nav-link">Menu 2</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li class="dropdown-item">
+                      <a href="#" class="nav-link">Menu 3</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="03_01.html" class="nav-link">Photo Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link disabled">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
+        <div class="col-lg-6 col-sm-5">
+          <a href="index.html"
+            ><img
+              src="img/logo.png"
+              alt="Wisdom Pets. click for home."
+              class="img-responsive"
+          /></a>
         </div>
-
+        <div class="col-lg-6 col-sm-7">
+          <img
+            src="img/animals.jpg"
+            alt=""
+            class="d-none d-md-block img-fluid"
+          />
         </div>
-    </nav>
+      </header>
 
-    	<div class="col-lg-6 col-sm-5">
-        	<a href="index.html"><img src="img/logo.png" alt="Wisdom Pets. click for home." class="img-responsive"></a>
-        </div>
-    	<div class="col-lg-6 col-sm-7">
-        	<img src="img/animals.jpg" alt="" class="d-none d-md-block img-fluid">
-        </div>
-    </header>
+      <!-- row 2 -->
+      <div class="row">
+        <article class="col-lg-6 col-md-7">
+          <h1>Dog Photo Gallery</h1>
 
-    <!-- row 2 -->
-    <div class="row">
-    	<article class="col-lg-6 col-md-7">
-            <h1>Dog Photo Gallery</h1>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card bg-success mb-3">
+                <img src="img/dog1.jpg" alt="" class="img-fluid" />
+                <div class="card-footer">
+                  <p>
+                    Joe plays tug-o-war on the beach with Jasmine the Browny
+                    Dog.
+                  </p>
+                  <a
+                    href="#"
+                    class="card-link stretched-link btn btn-outline-warning fw-bold d-block"
+                    >Jasmine</a
+                  >
+                </div>
+              </div>
+            </div>
 
-            <div class="row">
-               <div class="col-md-6">
-                <div class="card bg-success mb-3">
-            	<img src="img/dog1.jpg" alt="" class="img-fluid">
-				<div class="card-footer">
-					<p>Joe plays tug-o-war on the beach with Jasmine the Browny Dog.</p>
-					<a href="#" class="card-link stretched-link btn btn-outline-warning fw-bold d-block">Jasmine</a>
-				</div>
+            <div class="col-md-6">
+              <div class="card bg-warning">
+                <img src="img/dog2.jpg" alt="" class="img-fluid" />
+                <div class="card-footer">
+                  <p>
+                    Ninja Peter enjoys the sunshine with Lightning the Super
+                    Dog.
+                  </p>
+                  <a href="#">Lightning</a>
                 </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card bg-danger">
+                <img src="img/dog3.jpg" alt="" class="img-fluid" />
+                <div class="card-footer">
+                  <p>Ellen and Henry play in the park with Sally.</p>
+                  <a href="#">Sally</a>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="card bg-warning">
-                <img src="img/dog2.jpg" alt="" class="img-fluid">
-				<div class="card-footer">
-					<p>Ninja Peter enjoys the sunshine with Lightning the Super Dog.</p>
-					<a href="#">Lightning</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card bg-info">
+                <img src="img/dog4.jpg" alt="" class="img-fluid" />
+                <div class="card-footer">
+                  <p>Julia, Dillon, and Scout watch morning cartoons.</p>
+                  <a href="#">Dillon & Scout</a>
                 </div>
-                </div>
-</div>
-                <div class="col-md-6">
-	<div class="card bg-danger">
-                    <img src="img/dog3.jpg" alt="" class="img-fluid">
-				<div class="card-footer">
-					<p>Ellen and Henry play in the park with Sally.</p>
-					<a href="#">Sally</a>
-                </div>
-                </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card bg-info">
-				<img src="img/dog4.jpg" alt="" class="img-fluid">
-				<div class="card-footer">
-					<p>Julia, Dillon, and Scout watch morning cartoons.</p>
-					<a href="#">Dillon & Scout</a>
-				</div>
-</div>
-</div>
-
-</div>
+              </div>
+            </div>
+          </div>
         </article>
         <aside class="col-lg-6 col-md-5">
-        	<h3>Contact information</h3>
-            <p>Contacting us is a breeze! Refer to this handy table for contact information.</p>
+          <h3>Contact information</h3>
+          <p>
+            Contacting us is a breeze! Refer to this handy table for contact
+            information.
+          </p>
 
-  <iframe src="page1.html" frameborder="0" width="100%" height="250" name="dat">
-</iframe>
+          <iframe
+            src="page1.html"
+            frameborder="0"
+            width="100%"
+            height="250"
+            name="dat"
+          >
+          </iframe>
 
-<ul class="pagination justify-content-center">
-  <li class="page-item disabled">
-    <a class="page-link" href="#">Previous</a>
-  </li>
-  <li class="page-item"><a class="page-link" href="page1.html" target="dat">1</a></li>
-  <li class="page-item"><a class="page-link" href="page2.html" target="dat">2</a></li>
-  <li class="page-item"><a class="page-link" href="page3.html" target="dat">3</a></li>
-  <li class="page-item">
-    <a class="page-link" href="page2.html">Next</a>
-  </li>
-</ul>
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="page1.html" target="dat">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="page2.html" target="dat">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="page3.html" target="dat">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="page2.html">Next</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <!-- end row 2 -->
 
-              
-         </aside>
+      <div class="row mt-4" id="accordion">
+        <h2>FAQ 1</h2>
+        <div id="basic">
+          <h3>Opening hours:</h3>
+          <p>
+            <br />
+            Monday, 10:00 to 11:40<br />
+            Tuesday, 14:00 to 16:30
+          </p>
+        </div>
+        <h2>FAQ 2</h2>
+        <div id="description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, omnis
+            temporibus asperiores eos atque tempore officia distinctio delectus
+            harum! Sit explicabo fugit necessitatibus labore aperiam obcaecati
+            eius debitis distinctio libero!
+          </p>
+        </div>
+        <h2>FAQ 3</h2>
+        <div id="schedule">
+          <ol>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Lorem ipsum dolor sit.</li>
+          </ol>
+        </div>
+      </div>
 
+      <!-- row 4 -->
+      <footer class="row">
+        <p>
+          <small
+            >This not a real veterinary medicine site, and is not meant to
+            diagnose or offer treatment. Please see your veterinarian for all
+            matters related to your pet's health.</small
+          >
+        </p>
+        <p><small>Wisdom Pet Medicine is a training brand</small></p>
+      </footer>
+    </div>
+    <!-- end container -->
 
-        </div><!-- end row 2 -->
-
-    <!-- row 4 -->
-    <footer class="row">
-         <p><small>This not a real veterinary medicine site, and is not meant to diagnose or offer treatment. Please see your veterinarian for all matters related to your pet's health.</small></p>
-         <p><small>Wisdom Pet Medicine is a training brand</small></p>
-    </footer>
-
-</div> <!-- end container -->
-
-<!-- javascript -->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- javascript -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-</body>
+    <script src="js/accordion.js"></script>
+  </body>
 </html>

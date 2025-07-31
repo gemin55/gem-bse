@@ -61,4 +61,12 @@ return timer;
 window.addEventListener("load", run);
 
 //create function stop() to stop the timer
+
+function stop(){
+    clearInterval(timer);
+}
+
 //search for the ss-container and add listeners to detect mouse event
+let sscontainer = document.getElementById("ss-container");
+sscontainer.addEventListener("mouseover", stop);
+sscontainer.addEventListener("mouseout", run);
